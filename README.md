@@ -63,6 +63,7 @@ Under settings:
 Execute as: Me
 
 Who has access: Anyone
-Connect the Form in Your Website
+
+ Copy your Web App URL
 Inside your JavaScript
 
