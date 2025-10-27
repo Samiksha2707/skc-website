@@ -295,15 +295,99 @@
         color: #333;
       }
 
+      /* Event Highlights Section - CENTERED with LARGER TEXT */
+      #highlights {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      .highlights-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .carousel-inner {
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      }
+
       .carousel-inner img {
-        height: 450px;
+        height: 500px;
         object-fit: cover;
+        width: 100%;
       }
 
       .carousel-caption {
-        background: rgba(0, 0, 0, 0.55);
-        padding: 15px 20px;
-        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.75);
+        padding: 25px 30px;
+        border-radius: 12px;
+        bottom: 40px;
+        left: 10%;
+        right: 10%;
+        width: 80%;
+        text-align: center;
+      }
+
+      .carousel-caption h5 {
+        font-size: 2.2rem;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+        font-weight: 700;
+        letter-spacing: 1.5px;
+      }
+
+      .carousel-caption p {
+        font-size: 1.4rem;
+        margin-bottom: 0;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+        font-weight: 500;
+        line-height: 1.4;
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 107, 0, 0.8);
+        border-radius: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        opacity: 0.9;
+        transition: all 0.3s ease;
+      }
+
+      .carousel-control-prev {
+        left: 20px;
+      }
+
+      .carousel-control-next {
+        right: 20px;
+      }
+
+      .carousel-control-prev:hover,
+      .carousel-control-next:hover {
+        background: var(--accent);
+        opacity: 1;
+        transform: translateY(-50%) scale(1.1);
+      }
+
+      .carousel-indicators {
+        bottom: 15px;
+      }
+
+      .carousel-indicators button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        margin: 0 6px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 2px solid transparent;
+      }
+
+      .carousel-indicators button.active {
+        background-color: var(--accent);
+        transform: scale(1.2);
       }
 
       /* Prizes Section with Hover Effects */
@@ -588,16 +672,80 @@
           font-size: 2.5rem;
         }
 
-        .carousel-inner img {
-          height: 300px;
-        }
-
         .hero {
           height: 70vh;
         }
 
         .event-date {
           font-size: 1.2rem;
+        }
+
+        /* Mobile Optimized Event Highlights */
+        #highlights {
+          padding-top: 2rem;
+          padding-bottom: 2rem;
+        }
+
+        .carousel-inner img {
+          height: 350px;
+        }
+
+        .carousel-caption {
+          background: rgba(0, 0, 0, 0.85);
+          padding: 20px 25px;
+          border-radius: 10px;
+          bottom: 25px;
+          left: 5%;
+          right: 5%;
+          width: 90%;
+        }
+
+        .carousel-caption h5 {
+          font-size: 1.8rem;
+          margin-bottom: 0.8rem;
+        }
+
+        .carousel-caption p {
+          font-size: 1.2rem;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+          width: 50px;
+          height: 50px;
+        }
+
+        .carousel-control-prev {
+          left: 10px;
+        }
+
+        .carousel-control-next {
+          right: 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .carousel-inner img {
+          height: 300px;
+        }
+
+        .carousel-caption {
+          padding: 15px 20px;
+          bottom: 15px;
+        }
+
+        .carousel-caption h5 {
+          font-size: 1.5rem;
+        }
+
+        .carousel-caption p {
+          font-size: 1.1rem;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+          width: 40px;
+          height: 40px;
         }
       }
 
@@ -631,6 +779,55 @@
       .fab:hover {
         transform: scale(1.1);
         background: #e55a00;
+      }
+
+      /* File upload styling */
+      .file-upload {
+        position: relative;
+        overflow: hidden;
+        display: inline-block;
+        width: 100%;
+      }
+
+      .file-upload-btn {
+        background: var(--primary);
+        color: white;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 5px;
+        font-size: 0.9rem;
+        font-weight: bold;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .file-upload-btn:hover {
+        background: var(--secondary);
+      }
+
+      .file-upload-input {
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        filter: alpha(opacity=0);
+        width: 100%;
+        height: 100%;
+      }
+
+      .file-name {
+        margin-left: 10px;
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      .required-field::after {
+        content: " *";
+        color: red;
       }
     </style>
   </head>
@@ -752,13 +949,39 @@
       </div>
     </section>
 
-    <!-- Event Highlights Section -->
+    <!-- Event Highlights Section - CENTERED with LARGER TEXT -->
     <section class="py-5 bg-dark text-white" id="highlights">
-      <div class="container">
-        <h2 class="text-center fw-bold text-warning mb-4">Event Highlights</h2>
+      <div class="container highlights-container">
+        <h2 class="text-center fw-bold text-warning mb-5 display-4">
+          Event Highlights
+        </h2>
 
         <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
-          <div class="carousel-inner rounded shadow-lg">
+          <!-- Carousel Indicators -->
+          <div class="carousel-indicators">
+            <button
+              type="button"
+              data-bs-target="#eventCarousel"
+              data-bs-slide-to="0"
+              class="active"
+              aria-current="true"
+              aria-label="Slide 1"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#eventCarousel"
+              data-bs-slide-to="1"
+              aria-label="Slide 2"
+            ></button>
+            <button
+              type="button"
+              data-bs-target="#eventCarousel"
+              data-bs-slide-to="2"
+              aria-label="Slide 3"
+            ></button>
+          </div>
+
+          <div class="carousel-inner">
             <!-- Slide 1 -->
             <div class="carousel-item active">
               <img
@@ -766,10 +989,11 @@
                 class="d-block w-100"
                 alt="Football Match"
               />
-              <div class="carousel-caption d-none d-md-block">
+              <div class="carousel-caption">
                 <h5 class="fw-bold text-warning">Thrilling Matches</h5>
                 <p>
-                  Experience the energy of intense knockout football battles.
+                  Experience the energy of intense knockout football battles
+                  with teams competing for glory!
                 </p>
               </div>
             </div>
@@ -781,11 +1005,11 @@
                 class="d-block w-100"
                 alt="Football Action"
               />
-              <div class="carousel-caption d-none d-md-block">
+              <div class="carousel-caption">
                 <h5 class="fw-bold text-warning">Team Spirit</h5>
                 <p>
                   Colleges from all over come together for the ultimate
-                  challenge.
+                  challenge and showcase their talent!
                 </p>
               </div>
             </div>
@@ -797,9 +1021,12 @@
                 class="d-block w-100"
                 alt="Football Celebration"
               />
-              <div class="carousel-caption d-none d-md-block">
+              <div class="carousel-caption">
                 <h5 class="fw-bold text-warning">Victory Moments</h5>
-                <p>Celebrate your wins and make unforgettable memories!</p>
+                <p>
+                  Celebrate your wins and make unforgettable memories that will
+                  last a lifetime!
+                </p>
               </div>
             </div>
           </div>
@@ -1146,10 +1373,12 @@
           </div>
 
           <div class="modal-body p-4">
-            <form id="registrationForm">
+            <form id="registrationForm" enctype="multipart/form-data">
               <div class="row g-3">
                 <div class="col-md-6">
-                  <label class="form-label fw-bold">Team Name</label>
+                  <label class="form-label fw-bold required-field"
+                    >Team Name</label
+                  >
                   <input
                     type="text"
                     class="form-control"
@@ -1160,7 +1389,9 @@
                 </div>
 
                 <div class="col-md-6">
-                  <label class="form-label fw-bold">College Name</label>
+                  <label class="form-label fw-bold required-field"
+                    >College Name</label
+                  >
                   <input
                     type="text"
                     class="form-control"
@@ -1171,7 +1402,9 @@
                 </div>
 
                 <div class="col-md-6">
-                  <label class="form-label fw-bold">Captain Name</label>
+                  <label class="form-label fw-bold required-field"
+                    >Captain Name</label
+                  >
                   <input
                     type="text"
                     class="form-control"
@@ -1182,11 +1415,13 @@
                 </div>
 
                 <div class="col-md-6">
-                  <label class="form-label fw-bold">Captain Contact No.</label>
+                  <label class="form-label fw-bold required-field"
+                    >Captain Contact No.</label
+                  >
                   <input
                     type="tel"
                     class="form-control"
-                    name="contact"
+                    name="captain_contact"
                     placeholder="e.g. 9876543210"
                     pattern="[0-9]{10}"
                     required
@@ -1194,7 +1429,23 @@
                 </div>
 
                 <div class="col-md-6">
-                  <label class="form-label fw-bold">Email Address</label>
+                  <label class="form-label fw-bold required-field"
+                    >Alternate Contact No.</label
+                  >
+                  <input
+                    type="tel"
+                    class="form-control"
+                    name="alternate_contact"
+                    placeholder="e.g. 9876543210"
+                    pattern="[0-9]{10}"
+                    required
+                  />
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label fw-bold required-field"
+                    >Email Address</label
+                  >
                   <input
                     type="email"
                     class="form-control"
@@ -1205,29 +1456,40 @@
                 </div>
 
                 <div class="col-md-6">
-                  <label class="form-label fw-bold">Number of Players</label>
+                  <label class="form-label fw-bold required-field"
+                    >Captain Aadhaar Number</label
+                  >
                   <input
-                    type="number"
+                    type="text"
                     class="form-control"
-                    name="players"
-                    min="7"
-                    max="10"
+                    name="captain_aadhaar"
+                    placeholder="12-digit Aadhaar number"
+                    pattern="[0-9]{12}"
                     required
                   />
                 </div>
 
-                <div class="col-12">
-                  <label class="form-label fw-bold"
-                    >Additional Notes (optional)</label
+                <div class="col-md-6">
+                  <label class="form-label fw-bold required-field"
+                    >Upload Aadhaar Card (Captain)</label
                   >
-                  <textarea
-                    class="form-control"
-                    name="notes"
-                    rows="3"
-                    placeholder="Any special requests or info"
-                  ></textarea>
+                  <div class="file-upload">
+                    <button type="button" class="file-upload-btn">
+                      <i class="fas fa-upload me-2"></i>Choose File
+                    </button>
+                    <input
+                      type="file"
+                      class="file-upload-input"
+                      name="captain_aadhaar_file"
+                      accept=".jpg,.jpeg,.png,.pdf"
+                      required
+                    />
+                    <span class="file-name">No file chosen</span>
+                  </div>
+                  <small class="form-text text-muted">
+                    Accepted formats: JPG, PNG, PDF (Max 5MB)
+                  </small>
                 </div>
-              </div>
 
               <div class="text-center mt-4">
                 <button type="submit" class="btn btn-success px-5">
@@ -1263,6 +1525,25 @@
           });
         });
 
+        // File upload functionality
+        const fileInputs = document.querySelectorAll(".file-upload-input");
+        fileInputs.forEach((input) => {
+          input.addEventListener("change", function () {
+            const fileName = this.files[0]
+              ? this.files[0].name
+              : "No file chosen";
+            this.parentNode.querySelector(".file-name").textContent = fileName;
+
+            // File size validation
+            if (this.files[0] && this.files[0].size > 5 * 1024 * 1024) {
+              alert("File size must be less than 5MB");
+              this.value = "";
+              this.parentNode.querySelector(".file-name").textContent =
+                "No file chosen";
+            }
+          });
+        });
+
         // Form submission (Google Sheets API endpoint goes here)
         document
           .getElementById("registrationForm")
@@ -1270,16 +1551,15 @@
             e.preventDefault();
 
             const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
 
             try {
               // Replace this with your Google Apps Script URL
               await fetch(
-                "https://script.google.com/macros/s/AKfycbysvGkDj7ZUGis6DDZ7RhnWkMfGv5DE_vp-TEvZ0KeS5sbtWe1fW7T4DJZQHxCqGFfe/exec",
+                "https://script.google.com/macros/s/AKfycbxBFkHsO1yKon6DNa5RgoZ-kAbiH9MmrYK_OSTHTl58msa6WH4CLj3VaSLRnoCoRX1qVw/exec",
                 {
                   method: "POST",
                   mode: "no-cors",
-                  body: JSON.stringify(data),
+                  body: formData,
                 }
               );
 
@@ -1287,6 +1567,11 @@
                 .getElementById("successMessage")
                 .classList.remove("d-none");
               this.reset();
+
+              // Reset file names
+              document.querySelectorAll(".file-name").forEach((el) => {
+                el.textContent = "No file chosen";
+              });
 
               // Optional: Auto-close after success
               setTimeout(() => {
