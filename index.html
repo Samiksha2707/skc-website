@@ -47,6 +47,10 @@
         font-family: "Bebas Neue", cursive;
         letter-spacing: 1px;
       }
+      h2{
+          text-align: center;
+
+      }
 
       .institute-header {
         background: linear-gradient(90deg, var(--primary), var(--secondary));
@@ -293,6 +297,7 @@
       .about p {
         font-size: 1.1rem;
         color: #333;
+
       }
 
       .carousel-inner img {
@@ -647,42 +652,42 @@
     </a>
 
     <!-- Header -->
-    <header class="institute-header py-3">
-      <div class="container text-center text-md-start">
-        <div
-          class="d-flex flex-column flex-md-row justify-content-between align-items-center"
-        >
-          <!-- Left Side: NCRD Logo + College Info -->
-          <div
-            class="d-flex align-items-center justify-content-center justify-content-md-start mb-3 mb-md-0 flex-wrap"
-          >
-            <img
-              src="ncrd-logo.png"
-              alt="NCRD Logo"
-              class="me-md-3 ncrd-logo mb-2 mb-md-0"
-            />
-            <div>
-              <h4 class="mb-0 fw-bold text-white">
-                Sterling Institute of Management Studies
-              </h4>
-              <p class="mb-0 text-white-50">
-                National Centre for Rural Development (NCRD)
-              </p>
-              <small class="text-warning">NAAC Accredited A+ Grade</small>
-            </div>
-          </div>
+<header style="padding:16px; background-color:rgba(255,255,255,0.7); box-shadow:0 2px 6px rgba(0,0,0,0.2);">
+  <div style="display:flex; align-items:center; justify-content:space-between; width:100%;">
+    
+    <!-- Left Logo -->
+    <div style="flex-shrink:0;">
+      <img
+        src="C:/Users/Vighnesh/Downloads/CollegeLogo.jpeg"
+        alt="College Logo"
+        style="width:64px; height:64px; object-fit:contain;"
+      />
+    </div>
 
-          <!-- Right Side: SKC Logo -->
-          <div class="text-center text-md-end">
-            <img
-              src="skc-logo.png"
-              alt="Soccer Knockout Logo"
-              class="skc-logo"
-            />
-          </div>
-        </div>
-      </div>
-    </header>
+    <!-- Center Text -->
+    <div style="text-align:center; flex-grow:1;">
+      <p style="text-transform:uppercase; font-size:14px; letter-spacing:1px; color:black; margin-bottom:8px; font-weight:600;">
+        NATIONAL CENTRE FOR RURAL DEVELOPMENT'S
+      </p>
+      <h1 style="font-size:28px; font-weight:800; color:#184aa7; margin-bottom:4px; font-family:serif, Georgia, 'Times New Roman', Times, serif;">
+        Sterling Institute of Management Studies
+      </h1>
+      <p style="font-size:16px; color:black; margin:0;">
+        NAAC Accredited A+ Grade
+      </p>
+    </div>
+
+    <!-- Right Logo -->
+    <div style="flex-shrink:0;">
+      <img
+        src="C:/Users/Vighnesh/Downloads/Skc logo.jpeg"
+        alt="Event Logo"
+        style="width:86px; height:86px; object-fit:contain;"
+      />
+    </div>
+
+  </div>
+</header>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -711,9 +716,10 @@
     <!-- About Section -->
     <section class="py-5">
       <div class="container">
+        <div class="text-center">
         <h2 class="text-center fw-bold section-title text-primary">
           About the Event
-        </h2>
+        </h2></div>
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <p class="lead text-center mb-4">
@@ -755,7 +761,8 @@
     <!-- Event Highlights Section -->
     <section class="py-5 bg-dark text-white" id="highlights">
       <div class="container">
-        <h2 class="text-center fw-bold text-warning mb-4">Event Highlights</h2>
+        <div class="text-center">
+        <h2 class="text-center fw-bold text-warning mb-4">Event Highlights</h2></div>
 
         <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
           <div class="carousel-inner rounded shadow-lg">
@@ -830,9 +837,10 @@
     <!-- Prizes Section -->
     <section class="py-5 bg-light">
       <div class="container">
+        <div class="text-center">
         <h2 class="text-center fw-bold section-title text-primary">
           Exciting Prizes
-        </h2>
+        </h2></div>
         <div class="row g-4 justify-content-center">
           <div class="col-md-6 col-lg-3">
             <div class="card prize-card p-4 border-0 shadow text-center">
@@ -877,9 +885,10 @@
     <!-- Rules Section -->
     <section class="py-5" id="rules">
       <div class="container">
+        <div class="text-center">
         <h2 class="text-center fw-bold section-title text-primary">
           Tournament Rules
-        </h2>
+        </h2></div>
         <div class="rules-container">
           <div class="rules-header">
             <h3>
@@ -962,9 +971,10 @@
     <!-- Sponsors Section -->
     <section class="py-5 bg-light" id="sponsors">
       <div class="container">
+        <div class="text-center">
         <h2 class="text-center fw-bold section-title text-primary mb-5">
           Previous Sponsors
-        </h2>
+        </h2></div>
         <div class="row justify-content-center g-4">
           <!-- Sponsor 1 -->
           <div class="col-6 col-md-3">
@@ -1028,9 +1038,10 @@
     <!-- Contact Section -->
     <section class="py-5">
       <div class="container">
+        <div class="text-center">
         <h2 class="text-center fw-bold section-title text-primary">
           Contact & Venue
-        </h2>
+        </h2></div>
         <div class="row">
           <div class="col-lg-6 mb-4">
             <div class="card border-0 shadow h-100">
@@ -1042,21 +1053,21 @@
                   📍 Plot No. 93, Sector-19, Near Seawoods Railway Station,
                   Nerul (E), Navi Mumbai
                 </p>
-                <div class="mt-4 bg-light p-3 rounded">
-                  <div
-                    id="map"
-                    style="
-                      height: 250px;
-                      background: #e9ecef;
-                      display: flex;
-                      align-items: center;
-                      justify-content: center;
-                      border-radius: 8px;
-                    "
-                  >
-                    <p class="text-muted mb-0">Map would be displayed here</p>
-                  </div>
-                </div>
+
+                <!-- Google Map Embed -->
+    <!-- 🗺️ Google Map Embed -->
+    <div class="map-container mt-4">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.895349458052!2d73.02083007466406!3d19.0243325535936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c3b95117e193%3A0x223ef7aa6f1bb89c!2sNCRD&#39;s%20Sterling%20Institutes%2C%20Nerul%2C%20Navi%20Mumbai!5e0!3m2!1sen!2sin!4v1761581957027!5m2!1sen!2sin" 
+        width="100%" 
+        height="450" 
+        style="border:0; border-radius:12px;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+                
               </div>
             </div>
           </div>
