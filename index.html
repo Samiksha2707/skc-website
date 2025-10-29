@@ -51,6 +51,68 @@
         text-align: center;
       }
 
+      /* Navigation Bar Styles */
+      .navbar {
+        background: linear-gradient(90deg, var(--primary), var(--secondary));
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        padding: 0.8rem 1rem;
+        transition: all 0.3s ease;
+        z-index: 1000;
+      }
+
+      .navbar-brand {
+        font-family: "Bebas Neue", cursive;
+        font-size: 1.8rem;
+        color: white !important;
+        letter-spacing: 1px;
+      }
+
+      .navbar-nav .nav-link {
+        color: rgba(255, 255, 255, 0.85) !important;
+        font-weight: 600;
+        margin: 0 0.5rem;
+        padding: 0.5rem 1rem !important;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link.active {
+        color: white !important;
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+
+      .navbar-nav .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background: var(--accent);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
+      }
+
+      .navbar-nav .nav-link:hover::after,
+      .navbar-nav .nav-link.active::after {
+        width: 80%;
+      }
+
+      .navbar-toggler {
+        border: none;
+        padding: 0.25rem 0.5rem;
+      }
+
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+
+      .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+      }
+
       .institute-header {
         background: linear-gradient(90deg, var(--primary), var(--secondary));
         color: white;
@@ -298,101 +360,7 @@
         color: #333;
       }
 
-      /* Enhanced Event Highlights Section */
-      #highlights {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-      }
-
-      .highlights-container {
-        max-width: 1200px;
-        margin: 0 auto;
-      }
-
-      .carousel-inner {
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-      }
-
-      .carousel-inner img {
-        height: 500px;
-        object-fit: cover;
-        width: 100%;
-      }
-
-      .carousel-caption {
-        background: rgba(0, 0, 0, 0.75);
-        padding: 25px 30px;
-        border-radius: 12px;
-        bottom: 40px;
-        left: 10%;
-        right: 10%;
-        width: 80%;
-        text-align: center;
-      }
-
-      .carousel-caption h5 {
-        font-size: 2.2rem;
-        margin-bottom: 1rem;
-        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
-        font-weight: 700;
-        letter-spacing: 1.5px;
-      }
-
-      .carousel-caption p {
-        font-size: 1.4rem;
-        margin-bottom: 0;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
-        font-weight: 500;
-        line-height: 1.4;
-      }
-
-      .carousel-control-prev,
-      .carousel-control-next {
-        width: 60px;
-        height: 60px;
-        background: rgba(255, 107, 0, 0.8);
-        border-radius: 50%;
-        top: 50%;
-        transform: translateY(-50%);
-        opacity: 0.9;
-        transition: all 0.3s ease;
-      }
-
-      .carousel-control-prev {
-        left: 20px;
-      }
-
-      .carousel-control-next {
-        right: 20px;
-      }
-
-      .carousel-control-prev:hover,
-      .carousel-control-next:hover {
-        background: var(--accent);
-        opacity: 1;
-        transform: translateY(-50%) scale(1.1);
-      }
-
-      .carousel-indicators {
-        bottom: 15px;
-      }
-
-      .carousel-indicators button {
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        margin: 0 6px;
-        background-color: rgba(255, 255, 255, 0.5);
-        border: 2px solid transparent;
-      }
-
-      .carousel-indicators button.active {
-        background-color: var(--accent);
-        transform: scale(1.2);
-      }
-
+      
       /* Prizes Section with Hover Effects */
       .prize-card {
         border-left: 5px solid var(--accent);
@@ -511,11 +479,13 @@
         font-weight: 600;
         color: var(--primary);
         margin-bottom: 8px;
+        font-size: 1.3rem; /* Increased font size for desktop */
       }
 
       .rule-content {
         color: #555;
         margin-left: 40px;
+        font-size: 1.1rem; /* Increased font size for desktop */
       }
 
       /* Sponsors Section with Animation */
@@ -651,65 +621,13 @@
         }
       }
 
-      /* File Upload Styling */
-      .file-upload-container {
-        margin-bottom: 1rem;
-      }
-
-      .file-upload-label {
-        display: block;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: var(--primary);
-      }
-
-      .file-upload-wrapper {
-        position: relative;
-        display: inline-block;
-        width: 100%;
-      }
-
-      .file-upload-input {
-        position: absolute;
-        left: 0;
-        top: 0;
-        opacity: 0;
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-      }
-
-      .file-upload-button {
-        display: inline-block;
-        padding: 10px 20px;
-        background: var(--primary);
-        color: white;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: none;
-        width: 100%;
-        text-align: center;
-      }
-
-      .file-upload-button:hover {
-        background: var(--secondary);
-      }
-
-      .file-name {
-        margin-top: 0.5rem;
-        font-size: 0.9rem;
-        color: #666;
-        display: block;
-      }
-
-      .required-field::after {
-        content: " *";
-        color: red;
-      }
-
+    
       /* Mobile view tweaks */
       @media (max-width: 768px) {
+        .navbar-brand {
+          font-size: 1.5rem;
+        }
+        
         .institute-header {
           text-align: center;
         }
@@ -740,74 +658,19 @@
           font-size: 1.2rem;
         }
 
-        /* Mobile Optimized Event Highlights */
-        #highlights {
-          padding-top: 2rem;
-          padding-bottom: 2rem;
-        }
+        
 
-        .carousel-inner img {
-          height: 350px;
-        }
-
-        .carousel-caption {
-          background: rgba(0, 0, 0, 0.85);
-          padding: 20px 25px;
-          border-radius: 10px;
-          bottom: 25px;
-          left: 5%;
-          right: 5%;
-          width: 90%;
-        }
-
-        .carousel-caption h5 {
-          font-size: 1.8rem;
-          margin-bottom: 0.8rem;
-        }
-
-        .carousel-caption p {
-          font-size: 1.2rem;
-        }
-
-        .carousel-control-prev,
-        .carousel-control-next {
-          width: 50px;
-          height: 50px;
-        }
-
-        .carousel-control-prev {
-          left: 10px;
-        }
-
-        .carousel-control-next {
-          right: 10px;
-        }
-      }
-
-      @media (max-width: 576px) {
-        .carousel-inner img {
-          height: 300px;
-        }
-
-        .carousel-caption {
-          padding: 15px 20px;
-          bottom: 15px;
-        }
-
-        .carousel-caption h5 {
-          font-size: 1.5rem;
-        }
-
-        .carousel-caption p {
+        /* Mobile adjustments for rules section */
+        .rule-title {
           font-size: 1.1rem;
         }
 
-        .carousel-control-prev,
-        .carousel-control-next {
-          width: 40px;
-          height: 40px;
+        .rule-content {
+          font-size: 0.95rem;
         }
       }
+
+     
 
       /* Counter Animation */
       .counter {
@@ -844,22 +707,62 @@
   </head>
 
   <body>
-    <!-- Floating Action Button -->
-    <a
-      href="#"
-      class="fab"
-      data-bs-toggle="modal"
-      data-bs-target="#registrationModal"
-    >
-      <i class="fas fa-edit"></i>
-    </a>
-
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <i class="fas fa-futbol me-2"></i>SKC 2025
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#prizes">Prizes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <!-- <li class="nav-item">
+              <a class="nav-link" href="#highlights">Highlights</a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="#rules">Rules</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#sponsors">Sponsors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-warning btn-sm text-dark mx-2" href="#" data-bs-toggle="modal" data-bs-target="#registrationModal">
+                Register Now
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <!-- Header -->
     <header
       style="
         padding: 16px;
         background-color: rgba(255, 255, 255, 0.7);
         box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+        margin-top: 76px;
       "
     >
       <div
@@ -921,7 +824,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="home">
       <div class="football"></div>
       <div class="football"></div>
       <div class="football"></div>
@@ -944,161 +847,8 @@
       </div>
     </section>
 
-    <!-- About Section -->
-    <section class="py-5">
-      <div class="container">
-        <div class="text-center">
-          <h2 class="text-center fw-bold section-title text-primary">
-            About the Event
-          </h2>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <p class="lead text-center mb-4">
-              Get ready for the most thrilling soccer event of the year! The
-              <strong class="text-accent"
-                >Soccer Knockout Challenge (SKC) 2025</strong
-              >
-              brings together teams from across colleges for three days of
-              high-energy matches, sportsmanship, and glory.
-            </p>
-            <div class="row mt-4">
-              <div class="col-md-6 mb-3">
-                <div class="card h-100 border-0 shadow-sm prize-card">
-                  <div class="card-body text-center">
-                    <i class="fas fa-user-graduate fa-2x text-primary mb-3"></i>
-                    <h5 class="card-title">Eligibility</h5>
-                    <p class="card-text">
-                      Students pursuing Graduation or Post-Graduation with a
-                      valid College ID
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                <div class="card h-100 border-0 shadow-sm prize-card">
-                  <div class="card-body text-center">
-                    <i class="fas fa-ticket-alt fa-2x text-primary mb-3"></i>
-                    <h5 class="card-title">Entry Fee</h5>
-                    <p class="card-text">₹1,000 per team</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Event Highlights Section - ENHANCED -->
-    <section class="py-5 bg-dark text-white" id="highlights">
-      <div class="container highlights-container">
-        <div class="text-center">
-          <h2 class="text-center fw-bold text-warning mb-5 display-4">
-            Event Highlights
-          </h2>
-        </div>
-
-        <div id="eventCarousel" class="carousel slide" data-bs-ride="carousel">
-          <!-- Carousel Indicators -->
-          <div class="carousel-indicators">
-            <button
-              type="button"
-              data-bs-target="#eventCarousel"
-              data-bs-slide-to="0"
-              class="active"
-              aria-current="true"
-              aria-label="Slide 1"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#eventCarousel"
-              data-bs-slide-to="1"
-              aria-label="Slide 2"
-            ></button>
-            <button
-              type="button"
-              data-bs-target="#eventCarousel"
-              data-bs-slide-to="2"
-              aria-label="Slide 3"
-            ></button>
-          </div>
-
-          <div class="carousel-inner">
-            <!-- Slide 1 -->
-            <div class="carousel-item active">
-              <img
-                src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1950&q=80"
-                class="d-block w-100"
-                alt="Football Match"
-              />
-              <div class="carousel-caption">
-                <h5 class="fw-bold text-warning">Thrilling Matches</h5>
-                <p>
-                  Experience the energy of intense knockout football battles
-                  with teams competing for glory!
-                </p>
-              </div>
-            </div>
-
-            <!-- Slide 2 -->
-            <div class="carousel-item">
-              <img
-                src="https://images.unsplash.com/photo-1575361204480-aadea25e6e68?auto=format&fit=crop&w=1950&q=80"
-                class="d-block w-100"
-                alt="Football Action"
-              />
-              <div class="carousel-caption">
-                <h5 class="fw-bold text-warning">Team Spirit</h5>
-                <p>
-                  Colleges from all over come together for the ultimate
-                  challenge and showcase their talent!
-                </p>
-              </div>
-            </div>
-
-            <!-- Slide 3 -->
-            <div class="carousel-item">
-              <img
-                src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?auto=format&fit=crop&w=1950&q=80"
-                class="d-block w-100"
-                alt="Football Celebration"
-              />
-              <div class="carousel-caption">
-                <h5 class="fw-bold text-warning">Victory Moments</h5>
-                <p>
-                  Celebrate your wins and make unforgettable memories that will
-                  last a lifetime!
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Carousel Controls -->
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#eventCarousel"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#eventCarousel"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
     <!-- Prizes Section -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-light" id="prizes">
       <div class="container">
         <div class="text-center">
           <h2 class="text-center fw-bold section-title text-primary">
@@ -1145,6 +895,76 @@
         </div>
       </div>
     </section>
+
+    <!-- About Section -->
+    <section class="py-5" id="about">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="text-center fw-bold section-title text-primary">
+            About the Event
+          </h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <p class="lead text-center mb-4">
+              Get ready for the most thrilling soccer event of the year! The
+              <strong class="text-accent"
+                >Soccer Knockout Challenge (SKC) 2025</strong
+              >
+              brings together teams from across colleges for three days of
+              high-energy matches, sportsmanship, and glory.
+            </p>
+            
+            <div class="row mt-4">
+              <div class="col-md-6 mb-4">
+                <h4 class="fw-bold text-primary mb-3">Event Overview</h4>
+                <p>
+                  The Soccer Knockout Challenge is a premier inter-collegiate football tournament organized by NCRD Sterling Institute of Management Studies. Now in its fifth season, SKC has established itself as one of the most anticipated sporting events in the region, attracting talented footballers from colleges across Maharashtra.
+                </p>
+                <p>
+                  This year's edition promises to be bigger and better than ever before, with improved facilities, enhanced prize money, and a more competitive format. The tournament aims to promote sportsmanship, teamwork, and healthy competition among college students while providing a platform for young footballers to showcase their skills.
+                </p>
+              </div>
+              <div class="col-md-6 mb-4">
+                <h4 class="fw-bold text-primary mb-3">Tournament Format</h4>
+                <p>
+                  The competition follows a knockout format where teams compete in high-intensity matches. Each match consists of two halves of 10 minutes each, with penalties deciding tied games. The tournament features a total of 32 teams competing for the coveted championship trophy and cash prizes.
+                </p>
+                <p>
+                  Beyond the main tournament, individual awards including the Golden Boot for the top scorer and Golden Glove for the best goalkeeper add extra excitement and recognition for outstanding individual performances.
+                </p>
+              </div>
+            </div>
+            
+            <div class="row mt-4">
+              <div class="col-md-6 mb-3">
+                <div class="card h-100 border-0 shadow-sm prize-card">
+                  <div class="card-body text-center">
+                    <i class="fas fa-user-graduate fa-2x text-primary mb-3"></i>
+                    <h5 class="card-title">Eligibility</h5>
+                    <p class="card-text">
+                      Students pursuing Graduation or Post-Graduation with a
+                      valid College ID
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="card h-100 border-0 shadow-sm prize-card">
+                  <div class="card-body text-center">
+                    <i class="fas fa-ticket-alt fa-2x text-primary mb-3"></i>
+                    <h5 class="card-title">Entry Fee</h5>
+                    <p class="card-text">₹1,000 per team</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    /
 
     <!-- Rules Section -->
     <section class="py-5" id="rules">
@@ -1302,7 +1122,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="py-5">
+    <section class="py-5" id="contact">
       <div class="container">
         <div class="text-center">
           <h2 class="text-center fw-bold section-title text-primary">
@@ -1377,6 +1197,20 @@
                       >
                     </div>
                   </div>
+                </div>
+                
+                <!-- Instagram Page ID -->
+                <div class="mt-4 text-center">
+                  <h5 class="fw-bold text-primary mb-3">
+                    <i class="fab fa-instagram me-2"></i>Follow Us on Instagram
+                  </h5>
+                  <p class="lead">
+                    <strong>@skc_sterling</strong>
+                  </p>
+                  <p>Stay updated with the latest news, match schedules, and behind-the-scenes content!</p>
+                  <a href="https://www.instagram.com/soccer_knockout_challenge?igsh=ZmN0YXJwczIxcWNh" target="_blank" class="btn btn-instagram" style="background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); color: white;">
+                    <i class="fab fa-instagram me-2"></i> Follow on Instagram
+                  </a>
                 </div>
               </div>
             </div>
@@ -1521,30 +1355,6 @@
                   />
                 </div>
 
-                <div class="col-md-6">
-                  <div class="file-upload-container">
-                    <label class="file-upload-label required-field"
-                      >Upload Captain's Aadhaar Card</label
-                    >
-                    <div class="file-upload-wrapper">
-                      <input
-                        type="file"
-                        class="file-upload-input"
-                        name="captain_aadhaar_file"
-                        accept=".jpg,.jpeg,.png,.pdf"
-                        required
-                      />
-                      <button type="button" class="file-upload-button">
-                        <i class="fas fa-upload me-2"></i>Choose File
-                      </button>
-                    </div>
-                    <small class="file-name">No file chosen</small>
-                    <small class="form-text text-muted d-block mt-1">
-                      Accepted formats: JPG, PNG, PDF (Max 10MB)
-                    </small>
-                  </div>
-                </div>
-
 
               <div class="text-center mt-4">
                 <button type="submit" class="btn btn-success px-5">
@@ -1566,86 +1376,92 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Simple counter animation for registration progress
-      document.addEventListener("DOMContentLoaded", function () {
-        // Add some interactive elements
-        const cards = document.querySelectorAll(
-          ".prize-card, .sponsor-card, .contact-card"
-        );
-
-        cards.forEach((card) => {
-          card.addEventListener("mouseenter", function () {
-            this.style.transition = "all 0.3s ease";
-          });
-        });
-
-        // File upload functionality
-        const fileInputs = document.querySelectorAll(".file-upload-input");
-        fileInputs.forEach((input) => {
-          input.addEventListener("change", function () {
-            const fileName = this.files[0]
-              ? this.files[0].name
-              : "No file chosen";
-            this.parentNode.parentNode.querySelector(".file-name").textContent =
-              fileName;
-
-            // File size validation
-            if (this.files[0] && this.files[0].size > 5 * 1024 * 1024) {
-              alert("File size must be 10MB");
-              this.value = "";
-              this.parentNode.parentNode.querySelector(
-                ".file-name"
-              ).textContent = "No file chosen";
-            }
-          });
-        });
-
-        // Form submission (Google Sheets API endpoint goes here)
-        document
-          .getElementById("registrationForm")
-          .addEventListener("submit", async function (e) {
-            e.preventDefault();
-
-            const formData = new FormData(this);
-
-            try {
-              // Replace this with your Google Apps Script URL
-              await fetch(
-                "https://script.google.com/macros/s/AKfycbysvGkDj7ZUGis6DDZ7RhnWkMfGv5DE_vp-TEvZ0KeS5sbtWe1fW7T4DJZQHxCqGFfe/exec",
-                {
-                  method: "POST",
-                  mode: "no-cors",
-                  body: formData,
-                }
-              );
-
-              document
-                .getElementById("successMessage")
-                .classList.remove("d-none");
-              this.reset();
-
-              // Reset file names
-              document.querySelectorAll(".file-name").forEach((el) => {
-                el.textContent = "No file chosen";
-              });
-
-              // Optional: Auto-close after success
-              setTimeout(() => {
-                const modal = bootstrap.Modal.getInstance(
-                  document.getElementById("registrationModal")
-                );
-                modal.hide();
-                document
-                  .getElementById("successMessage")
-                  .classList.add("d-none");
-              }, 2000);
-            } catch (error) {
-              alert("Something went wrong. Please try again!");
-              console.error(error);
-            }
-          });
+   <script>
+  // DOM Ready
+  document.addEventListener("DOMContentLoaded", function () {
+    // Add hover animation for cards
+    const cards = document.querySelectorAll(".prize-card, .sponsor-card, .contact-card");
+    cards.forEach((card) => {
+      card.addEventListener("mouseenter", function () {
+        this.style.transition = "all 0.3s ease";
       });
-    </script>
+    });
+
+    // Form submission (no file upload)
+    const form = document.getElementById("registrationForm");
+    if (form) {
+      form.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const formData = new FormData(this);
+
+        try {
+          // Replace this with your Google Apps Script URL
+          await fetch(
+            "https://script.google.com/macros/s/AKfycbzW7od_hvcbPRO_Btg_KGlNPvrYSYYdv8vsroMfRK0WFxbhucDNbgHnVzZfVi6QTVaK/exec",
+            {
+              method: "POST",
+              mode: "no-cors",
+              body: formData,
+            }
+          );
+
+          document.getElementById("successMessage").classList.remove("d-none");
+          this.reset();
+
+          // Auto-close modal after success
+          setTimeout(() => {
+            const modal = bootstrap.Modal.getInstance(
+              document.getElementById("registrationModal")
+            );
+            if (modal) modal.hide();
+            document.getElementById("successMessage").classList.add("d-none");
+          }, 2000);
+        } catch (error) {
+          alert("Something went wrong. Please try again!");
+          console.error(error);
+        }
+      });
+    }
+
+    // Navbar scroll effect
+    window.addEventListener("scroll", function () {
+      const navbar = document.querySelector(".navbar");
+      if (window.scrollY > 50) {
+        navbar.style.padding = "0.5rem 1rem";
+        navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.3)";
+      } else {
+        navbar.style.padding = "0.8rem 1rem";
+        navbar.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.2)";
+      }
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const targetId = this.getAttribute("href");
+        if (targetId === "#") return;
+
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: "smooth",
+          });
+
+          // Close mobile menu after clicking
+          const navbarToggler = document.querySelector(".navbar-toggler");
+          const navbarCollapse = document.querySelector(".navbar-collapse");
+          if (navbarCollapse.classList.contains("show")) {
+            navbarToggler.click();
+          }
+        }
+      });
+    });
+  });
+</script>
+
   </body>
 </html>
