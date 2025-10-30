@@ -766,12 +766,18 @@
             <li class="nav-item">
               <a class="nav-link" href="#contact">Contact</a>
             </li>
-            <li class="btn btn-lg register-btn"
-        data-bs-toggle="modal"
-        data-bs-target="#registrationModal">
-  Register Now
-              </a>
-            </li>
+             <li class="nav-item">
+          <a
+            class="nav-link register-now text-white px-3 "
+            data-bs-toggle="modal"
+            href="#registrationModal"
+            style="
+                background-color: #f15b04f2;
+"
+          >
+            Register Now
+          </a>
+        </li>
           </ul>
         </div>
       </div>
@@ -905,26 +911,6 @@
 
 
             </p>
-            
-            <!-- <div class="row mt-4">
-              <div class="col-md-6 mb-4">
-                <h4 class="fw-bold text-primary mb-3">Event Overview</h4>
-                <p>
-                  The Soccer Knockout Challenge is a premier inter-collegiate football tournament organized by NCRD Sterling Institute of Management Studies. Now in its fifth season, SKC has established itself as one of the most anticipated sporting events in the region, attracting talented footballers from colleges across Maharashtra.
-                </p>
-                <p>
-                  This year's edition promises to be bigger and better than ever before, with improved facilities, enhanced prize money, and a more competitive format. The tournament aims to promote sportsmanship, teamwork, and healthy competition among college students while providing a platform for young footballers to showcase their skills.
-                </p>
-              </div>
-              <div class="col-md-6 mb-4">
-                <h4 class="fw-bold text-primary mb-3">Tournament Format</h4>
-                <p>
-                  The competition follows a knockout format where teams compete in high-intensity matches. Each match consists of two halves of 10 minutes each, with penalties deciding tied games. The tournament features a total of 32 teams competing for the coveted championship trophy and cash prizes.
-                </p>
-                <p>
-                  Beyond the main tournament, individual awards including the Golden Boot for the top scorer and Golden Glove for the best goalkeeper add extra excitement and recognition for outstanding individual performances.
-                </p>
-              </div> -->
             </div>
             
             <div class="row mt-4">
@@ -1425,40 +1411,36 @@
       });
     });
 
-    // Form submission (no file upload)
+    // Form submission (instant feedback + background submit)
     const form = document.getElementById("registrationForm");
     if (form) {
-      form.addEventListener("submit", async function (e) {
+      form.addEventListener("submit", function (e) {
         e.preventDefault();
 
         const formData = new FormData(this);
+        const successMessage = document.getElementById("successMessage");
 
-        try {
-          // Replace this with your Google Apps Script URL
-          await fetch(
-            "https://script.google.com/macros/s/AKfycbzW7od_hvcbPRO_Btg_KGlNPvrYSYYdv8vsroMfRK0WFxbhucDNbgHnVzZfVi6QTVaK/exec",
-            {
-              method: "POST",
-              mode: "no-cors",
-              body: formData,
-            }
+        // 🔸 Show success instantly
+        successMessage.classList.remove("d-none");
+        this.reset();
+
+        // 🔸 Auto-close modal after short delay
+        setTimeout(() => {
+          const modal = bootstrap.Modal.getInstance(
+            document.getElementById("registrationModal")
           );
+          if (modal) modal.hide();
+          successMessage.classList.add("d-none");
+        }, 1500);
 
-          document.getElementById("successMessage").classList.remove("d-none");
-          this.reset();
-
-          // Auto-close modal after success
-          setTimeout(() => {
-            const modal = bootstrap.Modal.getInstance(
-              document.getElementById("registrationModal")
-            );
-            if (modal) modal.hide();
-            document.getElementById("successMessage").classList.add("d-none");
-          }, 2000);
-        } catch (error) {
-          alert("Something went wrong. Please try again!");
-          console.error(error);
-        }
+        // 🔸 Send data in background (no delay to user)
+        fetch(
+          "https://script.google.com/macros/s/AKfycbzU3vuSnkHQBxaT20Zrxr6EYLw4cZUUDFxzck7IA4ZgDFTKWHmHgkIFmarUqm2w9jkH/exec",
+          {
+            method: "POST",
+            body: formData,
+          }
+        ).catch((error) => console.error("Background submit failed:", error));
       });
     }
 
@@ -1500,6 +1482,7 @@
     });
   });
 </script>
+
 
   </body>
 </html>
